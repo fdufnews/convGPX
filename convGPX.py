@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 
-""" convert a gpx file without time tags to a compatible Garmin one"""
+""" convert a gpx file without time tags to a compatible Garmin one
+fdufnews april 25th 2022
+published under GPL-3.0 license
+"""
 
 #from argparse import ArgumentParser
 import argparse
@@ -8,6 +11,8 @@ import argparse
 import xml.etree.ElementTree as ET
 import time as T
 from math import sqrt, cos, sin, acos, radians
+
+version = '1.0'
 
 # calcRadius
 # compute earth radius for the current latitude
@@ -42,7 +47,7 @@ def calctimeto(lat, lon, olat, olon, timekm):
 # expects inputfile and output file
 # an optionnal speed argument can also be added
 parser = argparse.ArgumentParser(
-  description='Convert a GPX file without time information to a GPX understandable by Garmin GPS',
+  description='Convert a GPX file without time information to a GPX understandable by Garmin GPS V'+ version,
   formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 parser.add_argument('inputfile', action="store", help='name of the input file')
 parser.add_argument('outputfile', action="store", help='name of the output file')

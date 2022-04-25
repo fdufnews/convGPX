@@ -1,17 +1,17 @@
 convGPX.py
 ==========
 
-#What it is
+## What it is
 This is a small Python application that adds time information to a GPX file in order for it to be accepted by a GARMIN Edge 800 GPS.  
 With the time informations missing the GPX files are rejected by the Edge 800.  
 The time informations are computed based on the distance between 2 consecutive points. The height is currently not taken in to account so this is just a rough estimate. However, speed information can be added to the command line to make the time information more representative.  
 
-#Dependencies
+## Dependencies
 The application uses:
 - [xml.etree.ElementTree](https://docs.python.org/3/library/xml.etree.elementtree.html) to manipulate de GPX data
 - [argparse](https://docs.python.org/3/library/argparse.html) to parse the argument given in the command line
 
-#Usage
+## Usage
 ```bash
 >$ ./convGPX.py -h
 usage: convGPX.py [-h] [--speed SPEED] inputfile outputfile  
@@ -33,3 +33,6 @@ During the operation, the application displays for each point
 - the cumulated distance from point 0
 - the time value that will be inserted in the GPX file (the application gives point 0 the current time)
 
+## Warning
+This application works as I want it to and it covers my needs perfectly. If you have similar needs, don't hesitate to use it, but don't expect me to change it to cover a particular need.
+You can also copy it and modify it to personalize it as long as you keep the license. 
